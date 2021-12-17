@@ -1,0 +1,145 @@
+{
+  "@graph" : [ {
+    "@id" : "http://mdp.example-resource/${id}",
+    "@type" : "ids:DataResource",
+    "accessRights" : "http://publications.europa.eu/resource/authority/access-right/NON_PUBLIC",
+    "rights" : "https://w3id.org/mdp/schema/license#CONTRACT_AND_FEE",
+    "status" : "https://w3id.org/mdp/schema/status#IN_PROGRESS",
+    "contactPoint" : "https://mdp.bmvi.de/organizations/0de9b042-125b-4010-874b-f5d72ee08145",
+    "contractOffer" : "http://localhost:8080/catalog/1042058200/1585680482/-175115261/1456306041",
+    "created" : "2021-11-03T00:17:56.597Z",
+    "description" : "Sample 1 - agent IRIs",
+    "keyword" : [ "e2e-0Otqz", "e2e-EaDn" ],
+    "modified" : "2021-11-03T00:17:56.597Z",
+    "publisher" : "https://mdp.bmvi.de/organizations/0de9b042-125b-4010-874b-f5d72ee08145",
+    "resourceEndpoint" : "http://localhost:8080/catalog/1042058200/1585680482/-175115261/-437730351",
+    "sovereign" : "https://mdp.bmvi.de/organizations/0de9b042-125b-4010-874b-f5d72ee08145",
+    "spatialCoverage" : "https://w3id.org/idsa/autogen/nutsLocation/fde7f486-4ae3-4550-8ef3-2753eaa4a8d0",
+    "title" : "Sample Offer 1 - agents as IRIs",
+    "dataCategory" : "https://w3id.org/mdp/schema/data_categories#FILLING_AND_CHARGING_STATIONS",
+    "https://w3id.org/mdp/schema#mdpBrokering" : false,
+    "networkCoverage" : [ "https://w3id.org/mdp/schema/network_coverage#OTHER_PUBLIC_TRANSPORT_NETWORK", "https://w3id.org/mdp/schema/network_coverage#REGIONAL_ROADS" ],
+    "https://w3id.org/mdp/schema#publicationId" : "392524616978616320",
+    "roadNetworkCoverageDescription" : "",
+    "transportMode" : [ "https://w3id.org/mdp/schema/transport_mode#DEMAND_RESPONSIVE_TAXI", "https://w3id.org/mdp/schema/transport_mode#SCHEDULED_RAIL" ]
+  }, {
+    "@id" : "http://localhost:8080/catalog/1042058200/1585680482/-175115261/-437730351",
+    "@type" : "ids:ConnectorEndpoint",
+    "sameAs" : "https://w3id.org/idsa/autogen/connectorEndpoint/3658f28d-e835-4f24-8307-c95a3a2981f5",
+    "accessURL" : "https://consumer_endpoint"
+  }, {
+    "@id" : "http://localhost:8080/catalog/1042058200/1585680482/-175115261/1456306041",
+    "@type" : "ids:ContractOffer",
+    "sameAs" : "https://w3id.org/idsa/autogen/contractOffer/8b0a3b6e-5dfb-4d31-b8bd-226f24c76d0b",
+    "https://w3id.org/mdp/schema#napApprovalRequired" : false,
+    "https://w3id.org/mdp/schema#providerApprovalRequired" : true
+  }, {
+    "@id" : "https://w3id.org/idsa/autogen/nutsLocation/fde7f486-4ae3-4550-8ef3-2753eaa4a8d0",
+    "@type" : "https://w3id.org/mdp/schema#NutsLocation",
+    "nutsLocation" : [ "DE4", "DE501", "DE300" ]
+  }, {
+    "@id" : "https://w3id.org/mdp/schema/license#CONTRACT_AND_FEE",
+    "@type" : "mdp:MdpLicense"
+  } ],
+  "@context" : {
+    "sameAs" : {
+      "@id" : "http://www.w3.org/2002/07/owl#sameAs",
+      "@type" : "@id"
+    },
+    "accessURL" : {
+      "@id" : "https://w3id.org/idsa/core/accessURL",
+      "@type" : "@id"
+    },
+    "spatialCoverage" : {
+      "@id" : "https://w3id.org/idsa/core/spatialCoverage",
+      "@type" : "@id"
+    },
+    "modified" : {
+      "@id" : "https://w3id.org/idsa/core/modified",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "status" : {
+      "@id" : "http://www.w3.org/ns/adms#status",
+      "@type" : "@id"
+    },
+    "networkCoverage" : {
+      "@id" : "https://w3id.org/mdp/schema#networkCoverage",
+      "@type" : "@id"
+    },
+    "contactPoint" : {
+      "@id" : "http://www.w3.org/ns/dcat#contactPoint",
+      "@type" : "@id"
+    },
+    "keyword" : {
+      "@id" : "https://w3id.org/idsa/core/keyword"
+    },
+    "title" : {
+      "@id" : "https://w3id.org/idsa/core/title"
+    },
+    "roadNetworkCoverageDescription" : {
+      "@id" : "https://w3id.org/mdp/schema#roadNetworkCoverageDescription"
+    },
+    "dataCategory" : {
+      "@id" : "https://w3id.org/mdp/schema#dataCategory",
+      "@type" : "@id"
+    },
+    "resourceEndpoint" : {
+      "@id" : "https://w3id.org/idsa/core/resourceEndpoint",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "https://w3id.org/idsa/core/description"
+    },
+    "sovereign" : {
+      "@id" : "https://w3id.org/idsa/core/sovereign",
+      "@type" : "@id"
+    },
+    "publicationId" : {
+      "@id" : "https://w3id.org/mdp/schema#publicationId",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "transportMode" : {
+      "@id" : "https://w3id.org/mdp/schema#transportMode",
+      "@type" : "@id"
+    },
+    "mdpBrokering" : {
+      "@id" : "https://w3id.org/mdp/schema#mdpBrokering",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "publisher" : {
+      "@id" : "https://w3id.org/idsa/core/publisher",
+      "@type" : "@id"
+    },
+    "contractOffer" : {
+      "@id" : "https://w3id.org/idsa/core/contractOffer",
+      "@type" : "@id"
+    },
+    "rights" : {
+      "@id" : "http://purl.org/dc/terms/rights",
+      "@type" : "@id"
+    },
+    "created" : {
+      "@id" : "https://w3id.org/idsa/core/created",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "accessRights" : {
+      "@id" : "http://purl.org/dc/terms/accessRights",
+      "@type" : "@id"
+    },
+    "providerApprovalRequired" : {
+      "@id" : "https://w3id.org/mdp/schema#providerApprovalRequired",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "napApprovalRequired" : {
+      "@id" : "https://w3id.org/mdp/schema#napApprovalRequired",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "nutsLocation" : {
+      "@id" : "https://w3id.org/mdp/schema#nutsLocation"
+    },
+    "owl" : "http://www.w3.org/2002/07/owl#",
+    "ids" : "https://w3id.org/idsa/core/",
+    "mdp" : "https://w3id.org/mdp/schema#"
+  }
+}
+

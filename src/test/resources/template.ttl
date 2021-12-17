@@ -1,0 +1,46 @@
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix ns0: <http://www.w3.org/ns/adms#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix ns1: <https://w3id.org/idsa/core/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ns2: <https://w3id.org/mdp/schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+<http://mdp.example-resource/${id}>
+    a <https://w3id.org/idsa/core/DataResource> ;
+    dc:accessRights <http://publications.europa.eu/resource/authority/access-right/NON_PUBLIC> ;
+    dc:rights <https://w3id.org/mdp/schema/license#CONTRACT_AND_FEE> ;
+    ns0:status <https://w3id.org/mdp/schema/status#IN_PROGRESS> ;
+    dcat:contactPoint <https://mdp.bmvi.de/organizations/0de9b042-125b-4010-874b-f5d72ee08145> ;
+    ns1:contractOffer <http://localhost:8080/catalog/1042058200/1585680482/-175115261/1456306041> ;
+    ns1:created "2021-11-03T00:17:56.597Z"^^xsd:dateTime ;
+    ns1:description "Sample 1 - agent IRIs"^^xsd:string ;
+    ns1:keyword "e2e-0Otqz"^^xsd:string, "e2e-EaDn"^^xsd:string ;
+    ns1:modified "2021-11-03T00:17:56.597Z"^^xsd:dateTime ;
+    ns1:publisher <https://mdp.bmvi.de/organizations/0de9b042-125b-4010-874b-f5d72ee08145> ;
+    ns1:resourceEndpoint <http://localhost:8080/catalog/1042058200/1585680482/-175115261/-437730351> ;
+    ns1:sovereign <https://mdp.bmvi.de/organizations/0de9b042-125b-4010-874b-f5d72ee08145> ;
+    ns1:spatialCoverage <https://w3id.org/idsa/autogen/nutsLocation/fde7f486-4ae3-4550-8ef3-2753eaa4a8d0> ;
+    ns1:title "Sample Offer 1 - agents as IRIs"^^xsd:string ;
+    ns2:dataCategory <https://w3id.org/mdp/schema/data_categories#FILLING_AND_CHARGING_STATIONS> ;
+    ns2:mdpBrokering false ;
+    ns2:networkCoverage <https://w3id.org/mdp/schema/network_coverage#OTHER_PUBLIC_TRANSPORT_NETWORK>, <https://w3id.org/mdp/schema/network_coverage#REGIONAL_ROADS> ;
+    ns2:publicationId "392524616978616320"^^xsd:string ;
+    ns2:roadNetworkCoverageDescription ""^^xsd:string ;
+    ns2:transportMode <https://w3id.org/mdp/schema/transport_mode#DEMAND_RESPONSIVE_TAXI>, <https://w3id.org/mdp/schema/transport_mode#SCHEDULED_RAIL> .
+
+<https://w3id.org/mdp/schema/license#CONTRACT_AND_FEE> a ns2:MdpLicense .
+<http://localhost:8080/catalog/1042058200/1585680482/-175115261/1456306041>
+    a ns1:ContractOffer ;
+    owl:sameAs <https://w3id.org/idsa/autogen/contractOffer/8b0a3b6e-5dfb-4d31-b8bd-226f24c76d0b> ;
+    ns2:napApprovalRequired false ;
+    ns2:providerApprovalRequired true .
+
+<http://localhost:8080/catalog/1042058200/1585680482/-175115261/-437730351>
+    a ns1:ConnectorEndpoint ;
+    owl:sameAs <https://w3id.org/idsa/autogen/connectorEndpoint/3658f28d-e835-4f24-8307-c95a3a2981f5> ;
+    ns1:accessURL <https://consumer_endpoint> .
+
+<https://w3id.org/idsa/autogen/nutsLocation/fde7f486-4ae3-4550-8ef3-2753eaa4a8d0>
+    a ns2:NutsLocation ;
+    ns2:nutsLocation "DE4"^^xsd:string, "DE501"^^xsd:string, "DE300"^^xsd:string .
