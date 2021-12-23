@@ -3,7 +3,7 @@ import com.typesafe.config.{ConfigException, ConfigFactory}
 
 import scala.util.Try
 
-trait SimulationConfig extends SLF4JLogging {
+trait FusekiSimulationConfig extends SLF4JLogging {
 
   /**
    * Application config object.
@@ -58,7 +58,7 @@ trait SimulationConfig extends SLF4JLogging {
   /**
    * URL for test.
    */
-  val baseURL = getRequiredString("service.host")
+  val baseURL = getRequiredString("service.fuseki_host1")
 
   /**
    * Endpoint link.
@@ -84,7 +84,7 @@ trait SimulationConfig extends SLF4JLogging {
   /**
    *  Template file
    */
-  val templateFile = getRequiredString("scenario.template_file")
+  val templateFile = getRequiredString("scenario.ttl_template")
 
   /**
    *  Pause between requests
@@ -95,4 +95,6 @@ trait SimulationConfig extends SLF4JLogging {
    *   duration of test
    */
   val duration = getRequiredInt("scenario.duration")
+
+
 }

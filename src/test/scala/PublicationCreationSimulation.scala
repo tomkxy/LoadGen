@@ -10,7 +10,7 @@ import concurrent.duration.DurationInt
  * Load test for the rest service.
  */
 class PublicationCreationSimulation extends io.gatling.core.scenario.Simulation
-  with SimulationConfig {
+  with PublicationSimulationConfig {
 
   /**
    * http configuration.
@@ -18,7 +18,6 @@ class PublicationCreationSimulation extends io.gatling.core.scenario.Simulation
   val httpProtocol = http.baseUrl(baseURL)
 
   val pubId: String = ""
-
   val feeder = Iterator.continually(Map("id" -> (randomUUID().toString)))
 
   /**
