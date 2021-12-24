@@ -58,7 +58,7 @@ trait FusekiSimulationConfig extends SLF4JLogging {
   /**
    * URL for test.
    */
-  val baseURL = getRequiredString("service.fuseki_host1")
+  val baseURL = getRequiredString("service.fuseki_host")
 
   /**
    * Endpoint link.
@@ -96,5 +96,19 @@ trait FusekiSimulationConfig extends SLF4JLogging {
    */
   val duration = getRequiredInt("scenario.duration")
 
+  /**
+   *   number of Fuseki instances
+   */
+  val nrOfInstances = getRequiredInt("service.nr_of_instances")
+
+  /**
+   * base port
+   */
+  val basePort =  getRequiredInt("service.base_port")
+
+  /**
+   *   Fuseki host pattern
+   */
+  val fuseki_host_pattern = getRequiredString("service.fuseki_host_pattern")
 
 }

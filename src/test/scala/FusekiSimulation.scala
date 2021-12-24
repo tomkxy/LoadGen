@@ -20,14 +20,25 @@ class FusekiSimulation extends io.gatling.core.scenario.Simulation
   val pubId: String = ""
   val feeder = Iterator.continually(Map("id" -> (randomUUID().toString)))
 
+  /**
+   *   make sure that Fuseki instances are running on consecutive ports starting from 1 until nrOfInstances (max is nine)
+   */
+  val feedHostId = Iterator.continually(
+      Map("port" -> (basePort + scala.util.Random.nextInt( nrOfInstances) ))
+  )
 
   /**
    * Scenario for simulation.
    */
   val scn = scenario("Simulation for Fuseki").forever(
     feed(feeder)
+      .feed(feedHostId)
+      .exec { session =>
+          println(session("id").as[String])
+          session
+      }
       .exec(
-        http("add resource")
+        http(fuseki_host_pattern)
           .post("")
           .header("Content-Type", "text/turtle")
           .body(ElFileBody(templateFile)
@@ -36,7 +47,7 @@ class FusekiSimulation extends io.gatling.core.scenario.Simulation
         http("get resource")
           .post("")
           .header("Accept", "application/sparql-results+json")
-          .queryParam("query","SELECT (COUNT(*) as ?Triples)   WHERE { <http://mdp.example-resource/${id}> a <https://w3id.org/idsa/core/DataResource>}" )
+          .queryParam("query", "SELECT (COUNT(*) as ?Triples)   WHERE { <http://mdp.example-resource/${id}> a <https://w3id.org/idsa/core/DataResource>}")
           .check(status.is(200))
           .check(jsonPath("$..value").is("1"))
       )
