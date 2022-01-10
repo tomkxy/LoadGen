@@ -25,6 +25,10 @@ class PublicationCreationSimulation extends io.gatling.core.scenario.Simulation
    */
   val scn = scenario("Simulation for publication creation").forever(
       feed(feeder)
+        .exec { session =>
+          println(session("id").as[String])
+          session
+        }
       .exec(
         http("create offer")
           .put(offersEndpoint)
@@ -32,11 +36,11 @@ class PublicationCreationSimulation extends io.gatling.core.scenario.Simulation
           .body(ElFileBody(templateFile))
           .check(headerRegex("Location","""offeredResource/(\\*)""").saveAs(pubId))
       )
-      .exec (
-        http("getoffer")
-          .get(offersEndpoint + "/" + pubId)
-      )
-    .pause(pause)
+//      .exec (
+//        http("getoffer")
+//          .get(offersEndpoint + "/" + pubId)
+//      )
+//    .pause(pause)
   )
 
 
